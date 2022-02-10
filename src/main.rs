@@ -12,7 +12,7 @@ fn main() {
 
         clearscreen::clear().unwrap();
 
-        let num: u32 = num.trim().parse().expect("A number is required");
+        let num: u64 = num.trim().parse().expect("A number is required");
 
         clearscreen::clear().unwrap();
 
@@ -37,13 +37,12 @@ fn main() {
             None => break,
         }
     }
+}
 
-    fn next_fibonacci(n: u32) -> u32 {
-        if n <= 1 {
-            return n;
-        }
-
-        return next_fibonacci(n - 1) + next_fibonacci(n - 2);
+fn next_fibonacci(n: u64) -> u64 {
+    if n <= 1 {
+        return n;
     }
 
+    return next_fibonacci(n - 1) + next_fibonacci(n - 2);
 }
